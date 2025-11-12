@@ -1,54 +1,22 @@
 import pygame
-import sys
 
-# WINDOW STUFFS
-# Lets leave this value @ 1. When we get further into dev, change this to 60.
-FPS = 1
-FONT_SIZE = 16
-WIDTH, HEIGHT = 800, 600
-TITLE = "Basic Pygame Project"
+# https://stackoverflow.com/questions/67608894/pygame-click-on-image-event
 
-# COLORS
-BACKGROUND = (30, 30, 30)
-WHITE = (255, 255, 255)
-
-# GAME VALUES
-money = 0
-
-# Initialize Pygame
 pygame.init()
+screen = pygame.display.set_mode((640, 480))
 
-font = pygame.font.Font('assets/fonts/main.ttf', FONT_SIZE)
+image = pygame.image.load('assets/images/sponge.png')
+image = image.convert_alpha()  # preserves transparency and optimizes blitting
 
-# Create the display surface
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption(TITLE)
-
-# Clock to control the frame rate
-clock = pygame.time.Clock()
-
-# Main game loop
-running = True
-while running:
-    # Handle events
+while True: # main game loop
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
+            Loop = False
 
-    # Fill the screen with a color (RGB)
-    screen.fill(BACKGROUND)
-
-    # This is where we make a text box
-    text = font.render(str(money), True, WHITE, BACKGROUND)
-    textbox = text.get_rect()
-    textbox.center = (WIDTH // 2, HEIGHT // 2)
-    screen.blit(text, textbox)
-
-    # Update the display
-    pygame.display.flip()
-
-    clock.tick(FPS)
-
-# Quit Pygame safely
-pygame.quit()
-sys.exit()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            egg_rect = resized_egg.get_rect(topleft = (260,150))
+            if egg_rect.collidepoint(event.pos):
+                totalbal += cps
+                totalbalM = prettify(totalbal, '.')
+                text = font.render(f'Your total clicks are {totalbalM}', True, WHITE)
+                print("Your total clicks are", totalbalM, end="\r")
