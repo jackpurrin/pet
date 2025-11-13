@@ -15,7 +15,7 @@ it's going to be mainly written in python, but i'm gonna work on making a rust v
 
 ## to-do list
 
-- [ ] get basic graphics working in pygame
+- [ ] get basic graphics working in arcade!
 - [ ] make a "cost of care system"
     - this means:
     - food and supply costs
