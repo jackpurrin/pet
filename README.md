@@ -10,7 +10,8 @@ it's going to be mainly written in python, but i'm gonna work on making a rust v
 > [!TIP]
 > don't modify `main.py` unless you have 100% stable working changes. while you develop, work with test.py!
 
-https://probable-broccoli-r4r6qg5grw97cprr.github.dev/
+> [!TIP]
+> docs for the `arcade` framework are located at https://api.arcade.academy/ !
 
 ## to-do list
 
