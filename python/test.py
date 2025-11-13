@@ -4,13 +4,14 @@ class GameView(arcade.View):
 
     def __init__(self):
         super().__init__()
+        self.background_color = arcade.color.GRAY
+
         # 1. Create the SpriteList
         self.sprites = arcade.SpriteList()
 
-        # 2. Create & append your Sprite instance to the SpriteList
-        self.broken = arcade.Sprite()  # Sprite with the default texture
-        self.broken.position = self.center  # center sprite on screen
-        self.sprites.append(self.broken)  # Append the instance to the SpriteList
+        self.player = arcade.Sprite("assets/images/cat.png", scale=0.1)
+        self.player.position = self.center  # center sprite on screen
+        self.sprites.append(self.player)  # Append the instance to the SpriteList
 
     def on_draw(self):
         self.clear()
