@@ -1,0 +1,29 @@
+# Godot-specific ignores
+.import/
+.export/
+mono_temp/
+.data/
+
+# Godot 4: cache folder
+.cache/
+
+# Don't commit exported builds
+*.exe
+*.apk
+*.aab
+*.zip
+*.pck
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+
+# Mono / C# (if using Godot C#)
+.mono/
+*.csproj
+*.sln
+obj/
+bin/
+
+# VSCode
+.vscode/
