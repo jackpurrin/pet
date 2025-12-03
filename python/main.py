@@ -36,7 +36,8 @@ def stats():
     print(f"Current amount of cash is: {cash}")
 
 def addtime():
-    if time >= 25:
+    global time
+    if time >= 24:
         time = 0
     else: 
         time += 1
