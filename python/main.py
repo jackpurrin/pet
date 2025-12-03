@@ -24,22 +24,40 @@ dog = """\
 
 """
 
-os.system('cls' if os.name == 'nt' else 'clear')
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def help():
+    print("Type 'f' to feed")
+    print("Type 'p' to play")
+    print("Type 's to put the pet to sleep'")
+    print("Type 'h' to send to hospital")
+    print("Press enter to close")
+    input()
+
+def stats():
+    pass
+
 
 print("Which do you want? A cat or a dog?")
 
 pet = input()
 
 while(running):
-    os.system('cls' if os.name == 'nt' else 'clear')
+    clear()
 
     if pet == "cat":
         print(cat)
     elif pet == "dog":
         print(dog)
-    else: 
-        print(seal)
 
     print("Type 'help' for help!")
     print("Type 'stats' to check the stats!")
-    input()
+    userInput = input()
+
+    if userInput == "help":
+        clear()        
+        help()
+    elif userInput == "stats":
+        clear()
+        stats()
