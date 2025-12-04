@@ -5,6 +5,7 @@ var nickname;
 var time = 7;
 var hunger = 5;
 var sleep = 10;
+var mood = 10;
 var money = 100; // 100 for testing, prod will be 0.
 
 let catUrl = "assets/img/cat.jpg";
@@ -30,6 +31,14 @@ function save() {
     }
 }
 
+function update() {
+    document.getElementById("time").innerHTML = "Time: " + time
+    document.getElementById("hunger").innerHTML = "Hunger: " + hunger
+    document.getElementById("mood").innerHTML = "Happiness: " + mood
+    document.getElementById("sleep").innerHTML = "Sleep: " + sleep
+    document.getElementById("money").innerHTML = "Money: " + money
+}
+
 function render() {
     if (localStorage.getItem("isAdopted") == null) {
         document.location.href = "adopt.htm";
@@ -43,6 +52,8 @@ function render() {
         document.getElementById("pet").src = sealUrl;
     }
 
+    update()
+
     document.getElementById("name").innerHTML = localStorage.getItem("localNick")
 }
 
@@ -51,5 +62,8 @@ function main() {
         time += 1;
         hunger -= 0.2;
         sleep -= 1;
-    }, 1000);
+        mood -= 0.5;
+
+        update()
+    }, 5000);
 }
