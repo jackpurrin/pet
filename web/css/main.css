@@ -16,6 +16,10 @@ a {
     color: white;
 }
 
+h4 {
+    color: red;
+}
+
 hr {
     margin-left: auto;
     margin-right: auto;

@@ -26,7 +26,7 @@
 
             <h2>details</h2>
             <h3>name</h3>
-            <input type="text">
+            <input type="text" name="nickname">
             <h3>gender</h3>
             <div>
                 <input type="radio" id="male" name="gender" value="male" />
@@ -37,7 +37,8 @@
                 <label for="female">Female</label>
             </div>
             <hr />
-            <button>submit</button>
+            <h4 hidden id="error-text">make sure you fill all the boxes!</h4>
+            <button onclick="save()">submit</button>
         </main>
     </body>
 </html>
