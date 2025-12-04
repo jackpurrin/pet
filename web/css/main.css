@@ -27,3 +27,8 @@ hr {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+br {
+   display: block;
+   margin: 10px 0;
+}
