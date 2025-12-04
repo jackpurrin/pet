@@ -10,6 +10,7 @@ var money = 100; // 100 for testing, prod will be 0.
 var sick = 0;
 var depressed = false;
 var bad_tick = 0;
+var in_bed = false;
 
 let catUrl = "assets/img/cat.jpg";
 let dogUrl = "assets/img/dog.png";
@@ -73,10 +74,20 @@ function main() {
             sick -= 0.1;
         }
         if (sleep < 10) {
-            sleep += 1;
+            if (in_bed == false) {
+                sleep += 1;
+            }
         } else {
             sick += 0.05;
             mood -+ 1;
+        }
+
+        if (in_bed == true) {
+            if (sleep > 0) {
+                sleep -= 1;
+            } else if (sleep == 0) {
+                in_bed = false;
+            }
         }
 
         if (mood > 0) {
@@ -101,8 +112,26 @@ function main() {
                 document.getElementById('death').removeAttribute("hidden");
                 clearInterval(main_loop);
             }
+        } else {
+            bad_tick -= 0.5;
         }
 
         update()
     }, 500);
 }
+
+function feed() {
+    if (money >= 10 && hunger < 5) {
+        money -= 10
+        hunger += 2.5
+    }
+}
+
+function bed() {
+    if (in_bed == false) {
+        in_bed = true;
+    } else {
+        in_bed = false;
+    }
+}
+
