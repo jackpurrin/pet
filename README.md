@@ -17,7 +17,7 @@ it's going to be mainly written in HTML, CSS, and JS.
     - toy or activity purchaes
     - budget limits or in-game currency
 - [x] have customization on the pet (name the pet, choose cat or dog, etc.)
-- [/] pet care features (feed, play, rest, clean, etc.)
+- [ ] pet care features (feed, play, rest, clean, etc.)
 - [ ] reactions based on care level
 - [ ] a total of care related expenses
 - [ ] (optional) savings goals or earning systems
