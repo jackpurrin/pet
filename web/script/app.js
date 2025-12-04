@@ -69,7 +69,11 @@ function main() {
             time += 1;
         }
         if (hunger > 0) {
-            hunger -= 0.5;
+            if (in_bed == false) {
+                hunger -= 0.5;
+            } else if (in_bed == true) {
+                hunger -= 0.1;
+            }
         } else {
             sick -= 0.1;
         }
@@ -91,7 +95,9 @@ function main() {
         }
 
         if (mood > 0) {
-            mood -= 0.5;
+            if (in_bed == false) {
+                mood -= 0.5;
+            }
         } else {
             depressed = true;
         }
@@ -113,17 +119,25 @@ function main() {
                 clearInterval(main_loop);
             }
         } else {
-            bad_tick -= 0.5;
+            if (bad_tick < 0) {
+                bad_tick += 0
+            } else {
+                bad_tick -= 1;
+            }
         }
 
         update()
-    }, 500);
+    }, 1000);
 }
 
 function feed() {
     if (money >= 10 && hunger < 5) {
+        if (in_bed == true) {
+            in_bed == false;
+        }
         money -= 10
         hunger += 2.5
+        update()
     }
 }
 
@@ -135,3 +149,13 @@ function bed() {
     }
 }
 
+function play() {
+    if (money >= 5 && mood < 10) {
+        if (in_bed == true) {
+            in_bed == false;
+        }
+        money -= 5
+        mood += 2.5
+        update()
+    }
+}
