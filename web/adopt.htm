@@ -10,16 +10,33 @@
             <script src="script/app.js"></script>
             <h1 id="name">virtual pet</h1>
             <h2>type</h2>
-            <button>cat</button>
-            <button>dog</button>
-            <button>seal</button>
+
+            <div>
+                <input type="radio" id="cat" name="type" value="cat" />
+                <label for="cat">Cat</label>
+            </div>
+            <div>
+                <input type="radio" id="dog" name="type" value="dog" />
+                <label for="Dog">Dog</label>
+            </div>
+            <div>
+                <input type="radio" id="seal" name="type" value="seal" />
+                <label for="Seal">Seal</label>
+            </div>
+
             <h2>details</h2>
             <h3>name</h3>
             <input type="text">
             <h3>gender</h3>
-            <button>male</button>
-            <button>female</button>
-            <br />
+            <div>
+                <input type="radio" id="male" name="gender" value="male" />
+                <label for="male">Male</label>
+            </div>
+            <div>
+                <input type="radio" id="female" name="gender" value="female" />
+                <label for="female">Female</label>
+            </div>
+            <hr />
             <button>submit</button>
         </main>
     </body>
