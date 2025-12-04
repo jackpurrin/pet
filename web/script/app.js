@@ -94,6 +94,14 @@ function main() {
             document.getElementById('depressed').removeAttribute("hidden");
         }
 
+        if (depressed == true || sleep == 10 || sick < -0.5) {
+            bad_tick += 1
+            if (bad_tick >= 5) {
+                document.getElementById("pet").src = skullUrl;
+                clearInterval(main_loop);
+            }
+        }
+
         update()
     }, 5000);
 }
