@@ -98,10 +98,11 @@ function main() {
             bad_tick += 1
             if (bad_tick >= 5) {
                 document.getElementById("pet").src = skullUrl;
+                document.getElementById('death').removeAttribute("hidden");
                 clearInterval(main_loop);
             }
         }
 
         update()
-    }, 5000);
+    }, 500);
 }
