@@ -12,10 +12,10 @@ var depressed = false;
 var bad_tick = 0;
 var in_bed = false;
 
-let catUrl = "assets/img/cat.jpg";
-let dogUrl = "assets/img/dog.png";
-let sealUrl = "assets/img/seal.jpg";
-let skullUrl = "assets/img/skull.png";
+let catUrl = "/assets/img/cat.jpg";
+let dogUrl = "/assets/img/dog.png";
+let sealUrl = "/assets/img/seal.jpg";
+let skullUrl = "/assets/img/skull.png";
 
 function save() {
     type = document.querySelector('input[name="type"]:checked')?.value;
@@ -31,7 +31,7 @@ function save() {
         
     } else {
         localStorage.setItem("isAdopted", "True")
-        document.location.href = "index.htm";
+        document.location.href = "/";
     }
 }
 
@@ -45,7 +45,7 @@ function update() {
 
 function render() {
     if (localStorage.getItem("isAdopted") == null) {
-        document.location.href = "adopt.htm";
+        document.location.href = "adopt";
     }
 
     if (localStorage.getItem("localType") == "dog") {
