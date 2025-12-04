@@ -2,6 +2,9 @@ var type;
 var gender;
 var nickname;
 
+let catUrl = "assets/img/cat.jpg";
+let dogUrl = "assets/img/dog.png";
+
 function save() {
     type = document.querySelector('input[name="type"]:checked')?.value;
     gender = document.querySelector('input[name="gender"]:checked')?.value;
@@ -25,4 +28,12 @@ function render() {
     if (localStorage.getItem("isAdopted") == null) {
         document.location.href = "adopt.htm";
     }
+
+    if (localStorage.getItem("localType") == "dog") {
+        document.getElementById("pet").src = dogUrl;
+    } else if (localStorage.getItem("localType") == "cat") {
+        document.getElementById("pet").src = catUrl;
+    }
+
+    document.getElementById("name").innerHTML = localStorage.getItem("localNick")
 }
