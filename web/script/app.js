@@ -16,6 +16,13 @@ function save() {
         document.getElementById('error-text').removeAttribute("hidden");
         
     } else {
+        localStorage.setItem("isAdopted", "True")
         document.location.href = "index.htm";
+    }
+}
+
+function render() {
+    if (localStorage.getItem("isAdopted") == null) {
+        document.location.href = "adopt.htm";
     }
 }
