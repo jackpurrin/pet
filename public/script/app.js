@@ -61,14 +61,6 @@ function load() {
    depressed = localStorage.getItem("localDepressed")
    bad_tick = Number(localStorage.getItem("localBad"))
    in_bed = localStorage.getItem("localBed")
-
-   time = time)
-hunger = Number(hunger)
-sleep = Number(sleep)
-mood = Number(mood)
-money = Number(money)
-sick = Number(sick)
-bad_tick = Number(bad_tick)
 }
 
 function update() {
